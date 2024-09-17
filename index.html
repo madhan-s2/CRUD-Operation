@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Students Information</h1>
+        <button id="openModalBtn" class="add-user-btn">Add</button>
+        <table id="peopleTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>Mobile</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fill the Details</h2>
+            <form id="personForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label for="city">City:</label>
+                <input type="text" id="city" required/>
+                
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" pattern="[0-9]{10}" required>
+                
+                <button type="button" class="submit" onclick="addPerson()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
